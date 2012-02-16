@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="DukeBasketBall.xsd" generated="2012-02-10T01:15:13">
+<Calendar>
+<Subject>Belmont vs Duke (TV: ESPNU)</Subject>
+<StartDate>11/11/2011</StartDate>
+<StartTime>9:00:00 PM</StartTime>
+<EndDate>11/11/2011</EndDate>
+<EndTime>11:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/11/2011</ReminderDate>
+<ReminderTime>3:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/11/belmont-76-duke-77</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Presbyterian vs Duke (TV: ESPNU)</Subject>
+<StartDate>11/12/2011</StartDate>
+<StartTime>4:30:00 PM</StartTime>
+<EndDate>11/12/2011</EndDate>
+<EndTime>6:30:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/11/2011</ReminderDate>
+<ReminderTime>10:30:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/12/presbyterian-55-duke-96</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Michigan State (TV: ESPN)</Subject>
+<StartDate>11/15/2011</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>11/15/2011</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/15/2011</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/15/duke-74-michigan-state-69</Description>
+<Location>Madison Square Garden</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Davidson vs Duke (TV: ESPNU)</Subject>
+<StartDate>11/18/2011</StartDate>
+<StartTime>6:00:00 PM</StartTime>
+<EndDate>11/18/2011</EndDate>
+<EndTime>8:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/18/2011</ReminderDate>
+<ReminderTime>12:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/18/davidson-69-duke-82</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Tennessee vs Duke (TV: ESPN2)</Subject>
+<StartDate>11/21/2011</StartDate>
+<StartTime>5:40:00 PM</StartTime>
+<EndDate>11/21/2011</EndDate>
+<EndTime>7:40:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/20/2011</ReminderDate>
+<ReminderTime>11:40:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/21/tennessee-67-duke-77</Description>
+<Location>Lahaina Civic Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Michigan vs Duke (TV: ESPN)</Subject>
+<StartDate>11/22/2011</StartDate>
+<StartTime>7:20:00 PM</StartTime>
+<EndDate>11/22/2011</EndDate>
+<EndTime>9:20:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/22/2011</ReminderDate>
+<ReminderTime>1:20:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/22/michigan-75-duke-82</Description>
+<Location>Lahaina Civic Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Kansas (TV: ESPN)</Subject>
+<StartDate>11/23/2011</StartDate>
+<StartTime>10:10:00 PM</StartTime>
+<EndDate>11/24/2011</EndDate>
+<EndTime>12:10:00 AM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/23/2011</ReminderDate>
+<ReminderTime>4:10:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/23/duke-68-kansas-61</Description>
+<Location>Lahaina Civic Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Ohio State (TV: ESPN)</Subject>
+<StartDate>11/29/2011</StartDate>
+<StartTime>9:30:00 PM</StartTime>
+<EndDate>11/29/2011</EndDate>
+<EndTime>11:30:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>11/29/2011</ReminderDate>
+<ReminderTime>3:30:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/11/29/duke-63-ohio-state-85</Description>
+<Location>Value City Arena</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Colorado State vs Duke (TV: ESPN 2)</Subject>
+<StartDate>12/7/2011</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>12/7/2011</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>12/7/2011</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/12/07/colorado-state-64-duke-87</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Washington vs Duke (TV: CBS)</Subject>
+<StartDate>12/10/2011</StartDate>
+<StartTime>12:00:00 PM</StartTime>
+<EndDate>12/10/2011</EndDate>
+<EndTime>2:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>12/9/2011</ReminderDate>
+<ReminderTime>6:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/12/10/washington-80-duke-86</Description>
+<Location>Madison Square Garden</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>North Carolina-Greensboro vs Duke (TV: RSN)</Subject>
+<StartDate>12/19/2011</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>12/19/2011</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>12/19/2011</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/12/19/north-carolina-greensboro-63-duke-90</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Western Michigan vs Duke (TV: ESPN2)</Subject>
+<StartDate>12/30/2011</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>12/30/2011</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>12/30/2011</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2011/12/30/western-michigan-70-duke-110</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Pennsylvania vs Duke (TV: ESPNU)</Subject>
+<StartDate>1/1/2012</StartDate>
+<StartTime>5:00:00 PM</StartTime>
+<EndDate>1/1/2012</EndDate>
+<EndTime>7:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>12/31/2011</ReminderDate>
+<ReminderTime>11:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/01/pennsylvania-55-duke-85</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Temple (TV: ESPN2)</Subject>
+<StartDate>1/4/2012</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>1/4/2012</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/4/2012</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/04/duke-73-temple-78</Description>
+<Location>Wells Fargo Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Georgia Tech (TV: ESPNU)</Subject>
+<StartDate>1/7/2012</StartDate>
+<StartTime>12:00:00 PM</StartTime>
+<EndDate>1/7/2012</EndDate>
+<EndTime>2:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/6/2012</ReminderDate>
+<ReminderTime>6:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/07/duke-81-georgia-tech-74</Description>
+<Location>Philips Arena</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Virginia vs Duke (TV: ESPN)</Subject>
+<StartDate>1/12/2012</StartDate>
+<StartTime>9:00:00 PM</StartTime>
+<EndDate>1/12/2012</EndDate>
+<EndTime>11:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/12/2012</ReminderDate>
+<ReminderTime>3:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/12/virginia-58-duke-61</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Clemson (TV: ESPNU)</Subject>
+<StartDate>1/15/2012</StartDate>
+<StartTime>6:00:00 PM</StartTime>
+<EndDate>1/15/2012</EndDate>
+<EndTime>8:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/15/2012</ReminderDate>
+<ReminderTime>12:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/15/duke-73-clemson-66</Description>
+<Location>Littlejohn Coliseum</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Wake Forest vs Duke (TV: ESPN)</Subject>
+<StartDate>1/19/2012</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>1/19/2012</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/19/2012</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/19/wake-forest-73-duke-91</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Florida State vs Duke (TV: ESPN)</Subject>
+<StartDate>1/21/2012</StartDate>
+<StartTime>4:00:00 PM</StartTime>
+<EndDate>1/21/2012</EndDate>
+<EndTime>6:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/20/2012</ReminderDate>
+<ReminderTime>10:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/21/florida-state-76-duke-73</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Maryland (TV: ESPN)</Subject>
+<StartDate>1/25/2012</StartDate>
+<StartTime>9:00:00 PM</StartTime>
+<EndDate>1/25/2012</EndDate>
+<EndTime>11:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/25/2012</ReminderDate>
+<ReminderTime>3:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/25/duke-74-maryland-61</Description>
+<Location>Comcast Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>St. John&apos;s vs Duke (TV: ESPN)</Subject>
+<StartDate>1/28/2012</StartDate>
+<StartTime>12:00:00 PM</StartTime>
+<EndDate>1/28/2012</EndDate>
+<EndTime>2:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>1/27/2012</ReminderDate>
+<ReminderTime>6:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/01/28/st-johns-76-duke-83</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Virginia Tech (TV: ESPN)</Subject>
+<StartDate>2/2/2012</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>2/2/2012</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/2/2012</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/02/duke-75-virginia-tech-60</Description>
+<Location>Cassell Coliseum</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Miami (FL) vs Duke (TV: ESPNU)</Subject>
+<StartDate>2/5/2012</StartDate>
+<StartTime>3:00:00 PM</StartTime>
+<EndDate>2/5/2012</EndDate>
+<EndTime>5:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/4/2012</ReminderDate>
+<ReminderTime>9:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/05/miami-fl-78-duke-74</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs North Carolina (TV: ESPN, ACC Network)</Subject>
+<StartDate>2/8/2012</StartDate>
+<StartTime>9:10:00 PM</StartTime>
+<EndDate>2/8/2012</EndDate>
+<EndTime>11:10:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/8/2012</ReminderDate>
+<ReminderTime>3:10:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/08/duke-85-north-carolina-84</Description>
+<Location>Dean E. Smith Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Maryland vs Duke (TV: ESPN)</Subject>
+<StartDate>2/11/2012</StartDate>
+<StartTime>4:00:00 PM</StartTime>
+<EndDate>2/11/2012</EndDate>
+<EndTime>6:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/10/2012</ReminderDate>
+<ReminderTime>10:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/11/2012-02-11_maryland_vs_duke</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>NC State vs Duke (TV: ACC Network)</Subject>
+<StartDate>2/16/2012</StartDate>
+<StartTime>9:00:00 PM</StartTime>
+<EndDate>2/16/2012</EndDate>
+<EndTime>11:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/16/2012</ReminderDate>
+<ReminderTime>3:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/16/2012-02-16_north-carolina-state_vs_duke</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Boston College (TV: ESPN U)</Subject>
+<StartDate>2/19/2012</StartDate>
+<StartTime>6:00:00 PM</StartTime>
+<EndDate>2/19/2012</EndDate>
+<EndTime>8:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/19/2012</ReminderDate>
+<ReminderTime>12:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/19/2012-02-19_duke_vs_boston-college</Description>
+<Location>Silvio O. Conte Forum</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Florida State (TV: ESPN)</Subject>
+<StartDate>2/23/2012</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>2/23/2012</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/23/2012</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/23/2012-02-23_duke_vs_florida-state</Description>
+<Location>Donald L. Tucker Center</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Virginia Tech vs Duke (TV: ACC Network)</Subject>
+<StartDate>2/25/2012</StartDate>
+<StartTime>12:00:00 PM</StartTime>
+<EndDate>2/25/2012</EndDate>
+<EndTime>2:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/24/2012</ReminderDate>
+<ReminderTime>6:00:00 PM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/25/2012-02-25_virginia-tech_vs_duke</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>Duke vs Wake Forest (TV: ESPNU)</Subject>
+<StartDate>2/28/2012</StartDate>
+<StartTime>9:00:00 PM</StartTime>
+<EndDate>2/28/2012</EndDate>
+<EndTime>11:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>2/28/2012</ReminderDate>
+<ReminderTime>3:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/02/28/2012-02-28_duke_vs_wake-forest</Description>
+<Location>Lawrence Joel Veterans Memorial Coliseum</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+<Calendar>
+<Subject>North Carolina vs Duke (TV: ESPN)</Subject>
+<StartDate>3/3/2012</StartDate>
+<StartTime>7:00:00 PM</StartTime>
+<EndDate>3/3/2012</EndDate>
+<EndTime>9:00:00 PM</EndTime>
+<Alldayevent>0</Alldayevent>
+<Reminderonoff>0</Reminderonoff>
+<ReminderDate>3/3/2012</ReminderDate>
+<ReminderTime>1:00:00 AM</ReminderTime>
+<Description>Visit StatSheet.com for more game info: http://statsheet.com/mcb/games/2012/03/03/2012-03-03_north-carolina_vs_duke</Description>
+<Location>Cameron Indoor Stadium</Location>
+<Priority>Low</Priority>
+<Private>0</Private>
+<Sensitivity>Normal</Sensitivity>
+<Showtimeas>2</Showtimeas>
+</Calendar>
+</dataroot>
