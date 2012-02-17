@@ -12,7 +12,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 
-public class DukeCalParser {
+public class DukeCalParser extends Parser{
 		
 	private File myFile;
 	private SAXBuilder myBuilder;
@@ -31,7 +31,8 @@ public class DukeCalParser {
 			
 			document = (Document) myBuilder.build(myFile);
 			Element rootNode = document.getRootElement();
-			return rootNode.getText().equals("events");
+			System.out.println(rootNode.getText());
+			return rootNode.getText().equals("");
 			
 		} catch (JDOMException e) {
 			// TODO Auto-generated catch block
@@ -43,7 +44,7 @@ public class DukeCalParser {
 		return false;
 	}
 	
-	public ArrayList<CalendarEvent> parseDuke() throws JDOMException, IOException
+	public ArrayList<CalendarEvent> parse() throws JDOMException, IOException
 	{
 		ArrayList<CalendarEvent> collection = new ArrayList<CalendarEvent>();
 		
@@ -73,6 +74,7 @@ public class DukeCalParser {
 			
 			collection.add(ce);
 		}	
+		System.out.println(collection.size());
 		return collection;
 	}
 }

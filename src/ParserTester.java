@@ -23,11 +23,17 @@ public class ParserTester {
 	public static void main(String args[]) {
 		
 		try {
-			
-			NFLParser parser = new NFLParser("src/NFLcalender.xml");
-			ArrayList<CalendarEvent> list = parser.parseDuke();
+			String file = "src/DukeCal.xml";
+			Parser parser = new DukeCalParser(file);
+			if(!parser.isThisKind())
+			{
+				System.out.println("what");
+				parser = new NFLParser(file);
+			}
+//			DukeCalParser("src/DukeCal.xml");
+			ArrayList<CalendarEvent> list = parser.parse();
 			Process processor = new Process(list);
-			list = processor.keyword("Jets");
+			list = processor.keyword("Lemur");
 			
 			 Output output = new Output(list);
 			 output.outputFile();

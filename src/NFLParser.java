@@ -12,7 +12,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 
-public class NFLParser {
+public class NFLParser extends Parser{
 
 	private File myFile;
 	private SAXBuilder myBuilder;
@@ -43,7 +43,7 @@ public class NFLParser {
 		return false;
 	}
 
-	public ArrayList<CalendarEvent> parseDuke() throws JDOMException, IOException
+	public ArrayList<CalendarEvent> parse() throws JDOMException, IOException
 	{
 		ArrayList<CalendarEvent> collection = new ArrayList<CalendarEvent>();
 
