@@ -1,0 +1,6 @@
+Tivoo Part1 Code completion README
+Team members: Kaitlyn Fang, Chris Graybeal, Gideon Rosenthal, Fred Tse
+
+1.Prototype main: ReadXMLFile.java
+2.Main: ParserTester.java
+3.Output file is outputEvent.htm in /Output folder

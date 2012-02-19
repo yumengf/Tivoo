@@ -7,18 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.joda.time.DateTime;
-
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
 import com.hp.gagawa.java.elements.Div;
 import com.hp.gagawa.java.elements.H1;
 import com.hp.gagawa.java.elements.H2;
-import com.hp.gagawa.java.elements.H3;
 import com.hp.gagawa.java.elements.H5;
 import com.hp.gagawa.java.elements.Html;
-import com.hp.gagawa.java.elements.Link;
-import com.hp.gagawa.java.elements.P;
 import com.hp.gagawa.java.elements.Text;
 
 public class Output {
@@ -26,19 +21,25 @@ public class Output {
 	private List<CalendarEvent> myCalendar;
 	private Map<Integer, ArrayList<CalendarEvent>> myList;
 	
-	//Constructor
+	/*
+	 * Constructor1
+	 */
 	public Output(ArrayList<CalendarEvent> cal) {	
 		myCalendar = cal;
 		myList = new HashMap<Integer, ArrayList<CalendarEvent>>();
 	}
 	
-	//Constructor
+	/*
+	 * Constructor2
+	 */
 	public Output() {		
 		myCalendar = new ArrayList<CalendarEvent>();
 		myList = new HashMap<Integer, ArrayList<CalendarEvent>>();
 	}
 	
-	//Sort CalendarEvent into Each day in the week, stored in Map
+	/*
+	 * Sort CalendarEvent into Each day in the week, stored in Map
+	 */
 	private void constructMap() {
 		for(int i = 0; i <7; i++) {
 			myList.put(i, new ArrayList<CalendarEvent>());
@@ -85,7 +86,9 @@ public class Output {
 		}
 	}
 	
-	//Main process, given myList, design the html output format
+	/*
+	 * Main process, given myList, design the html output format
+	 */
 	public void outputFile() {		
 		constructMap();
 					
@@ -159,13 +162,15 @@ public class Output {
 		return preAddress;
 	}
 		
-	//write HTML into specified file address
+	/*
+	 * write HTML into specified file address
+	 */
 	private void writeInFile(Html html, String address) {				
 		try {
 			File file = new File(address);		
 	        PrintWriter out = new PrintWriter(new FileOutputStream(file));
 	        out.println(html.write());								//write into file.
-	        /*System.out.println(output.write());*/					//test code line
+	        //System.out.println(output.write());				//test code line
 	        out.close();
 			} catch (FileNotFoundException e) {
                 e.printStackTrace();

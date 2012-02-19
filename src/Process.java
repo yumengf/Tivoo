@@ -1,28 +1,5 @@
-import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-
-
-
 import org.joda.time.DateTime;
-
-
-
-
-
-
-
-
-//import filterMethods.KeywordFilter;
-
-
-
-
-
-
-
 
 public class Process {
 
@@ -30,7 +7,6 @@ public class Process {
        public Process (ArrayList<CalendarEvent> inputEvents){
                myEvents = inputEvents;
        }
-
 
        /*
         * Returns an Arraylist of events which contains all the events

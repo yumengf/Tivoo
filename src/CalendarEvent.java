@@ -1,7 +1,11 @@
 import org.joda.time.DateTime;
 
 
-
+/*
+ * CalendarEvent is the object Parser classes created.
+ * It contains all desired information extracted from .xml file
+ * Its variables are private and can be accessed through getter methods
+ */
 public class CalendarEvent {
 	private String myEventName;
 	private String myLocation;

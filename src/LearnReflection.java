@@ -8,7 +8,6 @@ public class LearnReflection {
 		Method m[] = c.getDeclaredMethods();
 		System.out.println(m[0].toString());
 	} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	}
