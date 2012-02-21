@@ -1,12 +1,9 @@
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
-import org.jdom.input.SAXBuilder;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -18,32 +15,11 @@ import org.joda.time.format.DateTimeFormatter;
  */
 public class NFLParser extends Parser{
 
-	private File myFile;
-	private SAXBuilder myBuilder;
 	private DateTimeFormatter myFormatter = DateTimeFormat.forPattern("yyyy-MM-dd H:mm:ss");
 
-	public NFLParser(String filename) 
-	{
-		myFile = new File(filename);
-		myBuilder = new SAXBuilder();
+	public NFLParser() {
 	}
 
-	public boolean isThisKind()
-	{
-		Document document;
-		try {
-
-			document = (Document) myBuilder.build(myFile);
-			Element rootNode = document.getRootElement();
-			return rootNode.getText().equals("document");
-
-		} catch (JDOMException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
 	
 	/*
 	 * parse() returns an ArrayList of CalendarEvent.java which contains
@@ -51,13 +27,10 @@ public class NFLParser extends Parser{
 	 * (non-Javadoc)
 	 * @see Parser#parse()
 	 */
-	public ArrayList<CalendarEvent> parse() throws JDOMException, IOException
+	public ArrayList<CalendarEvent> parse(Element rootNode) throws JDOMException, IOException
 	{
 		ArrayList<CalendarEvent> collection = new ArrayList<CalendarEvent>();
-
-		Document document = (Document) myBuilder.build(myFile);
-		Element rootNode = document.getRootElement();
-		List list = rootNode.getChildren("row");
+		List<?> list = rootNode.getChildren("row");
 
 		for(Object e : list)
 		{

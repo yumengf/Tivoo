@@ -30,7 +30,7 @@ public class ReadXMLFile {
 
 			Document document = (Document) builder.build(xmlFile);
 			Element rootNode = document.getRootElement();
-			List list = rootNode.getChildren("event"); // a list of 'event'
+			List<?> list = rootNode.getChildren("event"); // a list of 'event'
 
 			// Make HTML using gagawa
 			Html html = new Html();
