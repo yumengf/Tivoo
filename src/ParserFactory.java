@@ -17,7 +17,6 @@ public class ParserFactory {
 	private Map<String, Class<?>> myMap;
 	private Element myRoot;
 	
-	
 	public ParserFactory() throws ClassNotFoundException{
 		myMap = new HashMap<String, Class<?>>();
 		myMap.put("", Class.forName("DukeCalParser")); //Class.forName is a static method in Class class
@@ -36,12 +35,9 @@ public class ParserFactory {
 		
 		Class<?> thisParser = myMap.get(myRoot.getText());
 		return (Parser) thisParser.newInstance(); //require an empty constructor, which we have!
-		
 	}
 
 	public Element getMyRoot() {
 		return myRoot;
 	}
-	
-	
 }
