@@ -17,7 +17,7 @@ public class Process {
                for (CalendarEvent currentEvent: myEvents){
                        // if the event has an index != -1. it means it contains the word
                        // and therefore adds it to the list
-                       if (currentEvent.getMyName().indexOf(keyword) != -1){
+                       if (currentEvent.hasKeyWord(keyword)){
                                myEventsToReturn.add(currentEvent);
                        }
                }
@@ -32,12 +32,10 @@ public class Process {
                ArrayList<CalendarEvent> myEventsCopy = new ArrayList<CalendarEvent>();
                for (CalendarEvent currentEvent: myEvents){
                        //Start Date is greater than or equal to start date
-                       if (currentEvent.getMyStartDate().isAfter(start)){
-                               //End Date is less than or equal to finish date
-                               if (currentEvent.getMyEndDate().isBefore(finish)){
-                                       myEventsCopy.add(currentEvent);
-                               }
+                       if(currentEvent.isInTimeFrame(start, finish)){
+                    	   myEventsCopy.add(currentEvent);
                        }
+                       
                }
                return myEventsCopy;
        }

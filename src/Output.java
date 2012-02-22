@@ -48,37 +48,37 @@ public class Output {
 		for(int i = 0; i< myCalendar.size(); i++) {
 			CalendarEvent cal = myCalendar.get(i);
 			
-			if((cal.getMyStartDate().dayOfWeek().get()== 0)&&!myList.get(0).contains(cal)){
+			if((cal.startDayOfWeek()== 0)&&!myList.get(0).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(0);
 				currentList.add(cal);
 				myList.put(0, currentList);
 			}
-			else if((cal.getMyStartDate().dayOfWeek().get() == 1)&&!myList.get(1).contains(cal)){
+			else if((cal.startDayOfWeek() == 1)&&!myList.get(1).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(1);
 				currentList.add(cal);
 				myList.put(1, currentList);
 			}
-			else if((cal.getMyStartDate().dayOfWeek().get() == 2)&&!myList.get(2).contains(cal)){
+			else if((cal.startDayOfWeek() == 2)&&!myList.get(2).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(2);
 				currentList.add(cal);
 				myList.put(2, currentList);
 			}
-			else if((cal.getMyStartDate().dayOfWeek().get() == 3)&&!myList.get(3).contains(cal)){
+			else if((cal.startDayOfWeek() == 3)&&!myList.get(3).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(3);
 				currentList.add(cal);
 				myList.put(3, currentList);
 			}
-			else if((cal.getMyStartDate().dayOfWeek().get() == 4)&&!myList.get(4).contains(cal)){
+			else if((cal.startDayOfWeek() == 4)&&!myList.get(4).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(4);
 				currentList.add(cal);
 				myList.put(4, currentList);
 			}
-			else if((cal.getMyStartDate().dayOfWeek().get() == 5)&&!myList.get(5).contains(cal)){
+			else if((cal.startDayOfWeek() == 5)&&!myList.get(5).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(5);
 				currentList.add(cal);
 				myList.put(5, currentList);
 			}
-			else if((cal.getMyStartDate().dayOfWeek().get() == 6)&&!myList.get(6).contains(cal)){
+			else if((cal.startDayOfWeek() == 6)&&!myList.get(6).contains(cal)){
 				ArrayList<CalendarEvent> currentList = myList.get(6);
 				currentList.add(cal);
 				myList.put(6, currentList);
@@ -137,11 +137,13 @@ public class Output {
 		
 		Div div = new Div();
 		
-		div.appendChild(new Text("Event Name: " + cal.getMyName() + "<br />"));
-		div.appendChild(new Text("Event Location: " + cal.getMyLocation() + "<br />"));
-		div.appendChild(new Text("Event Start Time: " + cal.getMyStartDate().toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
-		div.appendChild(new Text("Event End Time: " + cal.getMyEndDate().toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
+		cal.appendInformation(div);
 		
+//		div.appendChild(new Text("Event Name: " + cal.getMyName() + "<br />"));
+//		div.appendChild(new Text("Event Location: " + cal.getMyLocation() + "<br />"));
+//		div.appendChild(new Text("Event Start Time: " + cal.getMyStartDate().toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
+//		div.appendChild(new Text("Event End Time: " + cal.getMyEndDate().toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
+//		
 		A link = new A();
 		
 		String l = cal.getMyLink();
