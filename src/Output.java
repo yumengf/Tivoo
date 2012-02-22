@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
 import com.hp.gagawa.java.elements.Div;
@@ -14,181 +13,106 @@ import com.hp.gagawa.java.elements.H1;
 import com.hp.gagawa.java.elements.H2;
 import com.hp.gagawa.java.elements.H5;
 import com.hp.gagawa.java.elements.Html;
+import com.hp.gagawa.java.elements.Li;
+import com.hp.gagawa.java.elements.Table;
+import com.hp.gagawa.java.elements.Td;
 import com.hp.gagawa.java.elements.Text;
+import com.hp.gagawa.java.elements.Tr;
+import com.hp.gagawa.java.elements.Ul;
 
 public class Output {
-
 	private List<CalendarEvent> myCalendar;
 	private Map<Integer, ArrayList<CalendarEvent>> myList;
+	private static final String[] Weekday = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	
-	/*
-	 * Constructor1
-	 */
-	public Output(ArrayList<CalendarEvent> cal) {	
+	public Output(ArrayList<CalendarEvent> cal) {			//Constructor
 		myCalendar = cal;
 		myList = new HashMap<Integer, ArrayList<CalendarEvent>>();
+		initialMap();
 	}
 	
-	/*
-	 * Constructor2
-	 */
-	public Output() {		
-		myCalendar = new ArrayList<CalendarEvent>();
-		myList = new HashMap<Integer, ArrayList<CalendarEvent>>();
-	}
-	
-	/*
-	 * Sort CalendarEvent into Each day in the week, stored in Map
-	 */
-	private void constructMap() {
-		for(int i = 0; i <7; i++) {
-			myList.put(i, new ArrayList<CalendarEvent>());
-		}	
-		
-		for(int i = 0; i< myCalendar.size(); i++) {
-			CalendarEvent cal = myCalendar.get(i);
-			
-			if((cal.startDayOfWeek()== 0)&&!myList.get(0).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(0);
-				currentList.add(cal);
-				myList.put(0, currentList);
-			}
-			else if((cal.startDayOfWeek() == 1)&&!myList.get(1).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(1);
-				currentList.add(cal);
-				myList.put(1, currentList);
-			}
-			else if((cal.startDayOfWeek() == 2)&&!myList.get(2).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(2);
-				currentList.add(cal);
-				myList.put(2, currentList);
-			}
-			else if((cal.startDayOfWeek() == 3)&&!myList.get(3).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(3);
-				currentList.add(cal);
-				myList.put(3, currentList);
-			}
-			else if((cal.startDayOfWeek() == 4)&&!myList.get(4).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(4);
-				currentList.add(cal);
-				myList.put(4, currentList);
-			}
-			else if((cal.startDayOfWeek() == 5)&&!myList.get(5).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(5);
-				currentList.add(cal);
-				myList.put(5, currentList);
-			}
-			else if((cal.startDayOfWeek() == 6)&&!myList.get(6).contains(cal)){
-				ArrayList<CalendarEvent> currentList = myList.get(6);
-				currentList.add(cal);
-				myList.put(6, currentList);
-			}	
-		}
-	}
-	
-	/*
-	 * Main process, given myList, design the html output format
-	 */
-	public void outputFile() {		
-		constructMap();
-					
+	public void outputFile() {		//Main process. Using parameter myList, process the html output
+		constructMap();			
 		Html html = new Html();
-		Body body = new Body();
-		body.setBgcolor("grey");
+		Body body = new Body().setBgcolor("black");
+		html.appendChild(body);
+		Table table = new Table().setBgcolor("grey").setBorder("2");
+		Tr tr = new Tr().setAlign("center");
+		table.appendChild(tr);
+		body.appendChild(table);
 		
 		for(int i =0; i <7; i++) {
-			Div div = new Div();
-			H2 h = new H2();
-			h.appendText(Transfer(i)).setAlign("center");
-			div.appendChild(h);
-			
+			Td td = new Td().setAlign("center");
+			td.appendChild(new H2().appendText(Weekday[i]).setAlign("center"));
+			tr.appendChild(td);
+		}
+		
+		Tr tr2 = new Tr().setAlign("center");
+		table.appendChild(tr2);
+		for(int i =0; i <7; i++) {
+			Td td2 = new Td().setAlign("top");
 			if(myList.containsKey(i)&&!myList.get(i).isEmpty()) {
 				for(int j = 0; j< myList.get(i).size(); j++) {
 					CalendarEvent c = myList.get(i).get(j);
-					
-					Div div2 = new Div();
-					String myAddress = EventFile(i,c);
-					
-					A link = new A();
-					link.setHref(myAddress).setTarget("_blank");
-					H5 head = new H5();
-					head.appendText(c.getMyName());
-					head.setAlign("center");
+					Ul ul = new Ul();	
+					Li li = new Li();
+					A link = new A().setHref(EventFile(i,j, c)).setTarget("_blank");
+					H5 head = new H5().appendText(c.getMyName()).setAlign("center");				
 					link.appendChild(head);
-					div2.appendChild(link);	
-					div.appendChild(div2);
+					li.appendChild(link);
+					ul.appendChild(li);	
+					td2.appendChild(ul);
 				}
 			}
-			body.appendChild(div);
+			tr2.appendChild(td2);
 		}
-		html.appendChild(body);
 		writeInFile(html, "Output/outputEvent.htm");
 	}
 		
-	private String EventFile(int i, CalendarEvent cal) {
+	private String EventFile(int i, int j, CalendarEvent cal) {		//Create comments in each detail event page, return address of the page
 		Html html = new Html();
-		Body body = new Body();
-		body.setBgcolor("grey");
-		
-		H1 head = new H1();
-		head.setAlign("center");
-		head.appendChild(new Text("Detail Information about the Event:"));
+		Body body = new Body().setBgcolor("grey");	
+		H1 head = new H1().appendChild(new Text("Detail Information about the Event:")).setAlign("center");
 		body.appendChild(head);
-		
 		Div div = new Div();
-		
 		cal.appendInformation(div);
-		
-//		div.appendChild(new Text("Event Name: " + cal.getMyName() + "<br />"));
-//		div.appendChild(new Text("Event Location: " + cal.getMyLocation() + "<br />"));
-//		div.appendChild(new Text("Event Start Time: " + cal.getMyStartDate().toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
-//		div.appendChild(new Text("Event End Time: " + cal.getMyEndDate().toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
-//		
-		A link = new A();
-		
-		String l = cal.getMyLink();
-		
-		int pos = l.indexOf(".com") + 4;
-		l = l.substring(0, pos);
-		
-		link.setHref("http://" + l).setTarget("_blank");
-		link.appendChild(new Text("Click Here for LINK"));
+		A link = new A().setHref("http://" + cal.getMyLink()).setTarget("_blank").appendChild(new Text("Link for Detail Page"));			//attach link page
 		
 		div.appendChild(link);
 		body.appendChild(div);
 		html.appendChild(body);
 				
-		String preAddress =  i + cal.getMyName().substring(0,4) + ".htm";
-		String address = "Output/" + preAddress;
-		writeInFile(html, address);		
+		String preAddress =  i + j + ".htm";	//construct filename for specific event
+		writeInFile(html, "Output/" + preAddress);		
 		return preAddress;
 	}
-		
-	/*
-	 * write HTML into specified file address
-	 */
-	private void writeInFile(Html html, String address) {				
+	
+	private void writeInFile(Html html, String address) {		//write HTML into specified file address(final step)
 		try {
 			File file = new File(address);		
 	        PrintWriter out = new PrintWriter(new FileOutputStream(file));
 	        out.println(html.write());								//write into file.
-	        //System.out.println(output.write());				//test code line
 	        out.close();
 			} catch (FileNotFoundException e) {
                 e.printStackTrace();
         }
 	}
 	
-	private String Transfer(int i) {
-		switch (i) {
-		case 0: return "Sunday";
-		case 1: return "Monday";
-		case 2: return "Tuesday";
-		case 3: return "Wednesday";
-		case 4: return "Thursday";
-		case 5: return "Friday";
-		case 6: return "Saturday";
+	private void constructMap() {		//Sort CalendarEvent into Each day in the week, stored in Map	
+		for(CalendarEvent cal : myCalendar) {			//Sort date into each day
+			for(int j = 0; j <7; j++) {
+				if((cal.startDayOfWeek() == j)&&!myList.get(j).contains(cal)){
+					ArrayList<CalendarEvent> currentList = myList.get(j);
+					currentList.add(cal);
+					myList.put(j, currentList);
+				}
+			}
 		}
-		return null;
+	}
+	
+	private void initialMap() {		//Initialize map 
+		for(int i = 0; i <7; i++) {
+			myList.put(i, new ArrayList<CalendarEvent>());
+		}
 	}
 }
