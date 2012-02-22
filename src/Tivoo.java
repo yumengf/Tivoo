@@ -11,7 +11,7 @@ import org.jdom.JDOMException;
 public class Tivoo {
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		try {
-			String file = "src/NFLcalendar.xml";
+			String file = "src/NFLcalender.xml";
 			ParserFactory factory = new ParserFactory();
 			Parser parser = factory.getParser(file);
 			Element rootNode = factory.getMyRoot();
