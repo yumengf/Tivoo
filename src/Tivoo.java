@@ -9,31 +9,25 @@ import org.jdom.JDOMException;
  * and parses, filters and outputs an HTML file that shows relevant information
  */
 public class Tivoo {
-	
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		
 		try {
-			String file = "src/DukeCal.xml";
+			String file = "src/NFLcalendar.xml";
 			ParserFactory factory = new ParserFactory();
 			Parser parser = factory.getParser(file);
 			Element rootNode = factory.getMyRoot();
 			
 			ArrayList<CalendarEvent> list = parser.parse(rootNode);
 			Process processor = new Process(list);
-			list = processor.keyword("Lemur");
+			list = processor.keyword("49ers");
 			
-			 Output output = new Output(list);
-			 output.outputFile();
-				
-			
+			Output output = new Output(list);
+			output.outputFile();
+			 
 		} catch (JDOMException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		
-
 	}
-
 }
