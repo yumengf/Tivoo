@@ -20,40 +20,66 @@ import com.hp.gagawa.java.elements.Text;
 import com.hp.gagawa.java.elements.Tr;
 import com.hp.gagawa.java.elements.Ul;
 
+/*
+ *Output class receive list of CalendarEvent objects with information of eventName, date, location, 
+ *startTime and endTime, and then output the information into a html file with specific information linked to each event.
+ */
 public class Output {
 	private List<CalendarEvent> myCalendar;
-	private Map<Integer, ArrayList<CalendarEvent>> myList;
+	private Map<Integer, ArrayList<CalendarEvent>> myEventMap;
 	private static final String[] Weekday = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	
-	public Output(ArrayList<CalendarEvent> cal) {			//Constructor
+	public Output(ArrayList<CalendarEvent> cal) {
 		myCalendar = cal;
-		myList = new HashMap<Integer, ArrayList<CalendarEvent>>();
+		myEventMap = new HashMap<Integer, ArrayList<CalendarEvent>>();
 		initialMap();
+		constructMap();		
 	}
 	
-	public void outputFile() {		//Main process. Using parameter myList, process the html output
-		constructMap();			
+	/*
+	 * Main output process. Take in myEventMap, and output into html file.
+	 */
+	public void outputFile() {	
 		Html html = new Html();
 		Body body = new Body().setBgcolor("black");
 		html.appendChild(body);
 		Table table = new Table().setBgcolor("grey").setBorder("2");
-		Tr tr = new Tr().setAlign("center");
-		table.appendChild(tr);
 		body.appendChild(table);
 		
+		table = constructCalendarFrame(table);	//Initialize table with day name
+		table = addEventList(table);			//Add Event list to each day
+		
+		writeInFile(html, "Output/outputEvent.htm");
+	}
+	
+	/*
+	 * Takes in a Table object, initialize the table by adding  each day in a week.
+	 * Used in outputFile method.
+	 */	
+	private Table constructCalendarFrame(Table table) {
+		Tr tr = new Tr().setAlign("center");
+		table.appendChild(tr);		
+		//Create table name with days in a week
 		for(int i =0; i <7; i++) {
 			Td td = new Td().setAlign("center");
 			td.appendChild(new H2().appendText(Weekday[i]).setAlign("center"));
 			tr.appendChild(td);
 		}
+		return table;
+	}
+	/*
+	 * Takes in a Table object, append Events with corresponding day, return the table. 
+	 * Used in outputFile method.
+	 */
+	private Table addEventList(Table table) {
+		Tr tr = new Tr().setAlign("center");
+		table.appendChild(tr);
 		
-		Tr tr2 = new Tr().setAlign("center");
-		table.appendChild(tr2);
 		for(int i =0; i <7; i++) {
-			Td td2 = new Td().setAlign("top");
-			if(myList.containsKey(i)&&!myList.get(i).isEmpty()) {
-				for(int j = 0; j< myList.get(i).size(); j++) {
-					CalendarEvent c = myList.get(i).get(j);
+			Td td = new Td().setAlign("top");
+			if(myEventMap.containsKey(i)&&!myEventMap.get(i).isEmpty()) {
+				for(int j = 0; j< myEventMap.get(i).size(); j++) {
+					CalendarEvent c = myEventMap.get(i).get(j);
 					Ul ul = new Ul();	
 					Li li = new Li();
 					A link = new A().setHref(EventFile(i,j, c)).setTarget("_blank");
@@ -61,21 +87,26 @@ public class Output {
 					link.appendChild(head);
 					li.appendChild(link);
 					ul.appendChild(li);	
-					td2.appendChild(ul);
+					td.appendChild(ul);
 				}
 			}
-			tr2.appendChild(td2);
+			tr.appendChild(td);
 		}
-		writeInFile(html, "Output/outputEvent.htm");
+		return table;
 	}
-		
-	private String EventFile(int i, int j, CalendarEvent cal) {		//Create comments in each detail event page, return address of the page
+	
+	
+	/*
+	 * Construct information of CalendarEvent object  in each detail event page, 
+	 * return address of the specific page
+	 */
+	private String EventFile(int i, int j, CalendarEvent cal) {
 		Html html = new Html();
 		Body body = new Body().setBgcolor("grey");	
 		H1 head = new H1().appendChild(new Text("Detail Information about the Event:")).setAlign("center");
 		body.appendChild(head);
 		Div div = new Div();
-		cal.appendInformation(div);
+		cal.appendInformation(div);  // Append eventName, date, location and times to div.
 		A link = new A().setHref("http://" + cal.getMyLink()).setTarget("_blank").appendChild(new Text("Link for Detail Page"));			//attach link page
 		
 		div.appendChild(link);
@@ -87,7 +118,10 @@ public class Output {
 		return preAddress;
 	}
 	
-	private void writeInFile(Html html, String address) {		//write HTML into specified file address(final step)
+	/*
+	 * Take in html object and the file address, write html file into it.
+	 */
+	private void writeInFile(Html html, String address) {		
 		try {
 			File file = new File(address);		
 	        PrintWriter out = new PrintWriter(new FileOutputStream(file));
@@ -98,21 +132,30 @@ public class Output {
         }
 	}
 	
-	private void constructMap() {		//Sort CalendarEvent into Each day in the week, stored in Map	
+	/*
+	 * Sort CalendarEvent into Map according to weekday name. 
+	 * Used in Constructor
+	 */
+	private void constructMap() {
 		for(CalendarEvent cal : myCalendar) {			//Sort date into each day
 			for(int j = 0; j <7; j++) {
-				if((cal.startDayOfWeek() == j)&&!myList.get(j).contains(cal)){
-					ArrayList<CalendarEvent> currentList = myList.get(j);
+				if((cal.startDayOfWeek() == j)&&!myEventMap.get(j).contains(cal)){
+					ArrayList<CalendarEvent> currentList = myEventMap.get(j);
 					currentList.add(cal);
-					myList.put(j, currentList);
+					myEventMap.put(j, currentList);
 				}
 			}
 		}
 	}
 	
-	private void initialMap() {		//Initialize map 
+	/*
+	 * Initialize map. 
+	 * Used in Constructor
+	 */
+	private void initialMap() {
 		for(int i = 0; i <7; i++) {
-			myList.put(i, new ArrayList<CalendarEvent>());
+			myEventMap.put(i, new ArrayList<CalendarEvent>());
 		}
 	}
+	
 }
