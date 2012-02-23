@@ -40,6 +40,7 @@ public class CalendarEvent {
 		this.myEventName = myName;
 	}
 	
+	
 	public String getMyLink() {
 		return myLink;
 	}
