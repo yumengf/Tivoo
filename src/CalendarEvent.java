@@ -53,6 +53,10 @@ public class CalendarEvent {
 		return myStartDate;
 	}
 	
+	public DateTime getMyEndTime() {
+		return myEndDate;
+	}
+	
 	public void clear()
 	{
 		myEventName = null;
