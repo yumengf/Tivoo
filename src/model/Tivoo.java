@@ -29,8 +29,21 @@ public class Tivoo {
 			list = processor.filter("name reverse order", l, list);
 			
 			//Output type to be determined by GUI
-			Output output = new DayOutput(list);
+			//TODO: still have to handle edge case where nothing was filtered.
+			Output output = new MonthOutput(list);
 			output.outputFile("");
+			
+//			For the purpose of code testing:
+//			Output output = new DayOutput(list);
+//			output.outputFile("");
+//			
+//	 		Output output = new WeekOutput(list);
+//			output.outputFile("");
+//	
+//			Output output = new SortListOutput(list);
+//			output.outputFile("DaySort");
+//	OR           output.outputFile("StartTimeSort");
+//	OR           output.outputFile("EndTimeSort");
 
 		} catch (JDOMException e) {
 			e.printStackTrace();
