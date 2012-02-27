@@ -1,3 +1,5 @@
+package Input;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,10 +19,12 @@ public class ParserFactory {
 	private Map<String, Class<?>> myMap;
 	private Element myRoot;
 	
+	
 	public ParserFactory() throws ClassNotFoundException{
 		myMap = new HashMap<String, Class<?>>();
-		myMap.put("events", Class.forName("DukeCalParser")); //Class.forName is a static method in Class class
+		myMap.put("", Class.forName("DukeCalParser")); //Class.forName is a static method in Class class
 		myMap.put("document", Class.forName("NFLParser"));
+		myMap.put("tv", Class.forName("TVParser"));
 	}
 
 	/*
@@ -33,11 +37,15 @@ public class ParserFactory {
 		Document document = (Document) myBuilder.build(myFile);
 		myRoot = document.getRootElement();
 		
+		System.out.print(myRoot.getName());
 		Class<?> thisParser = myMap.get(myRoot.getName());
-		return (Parser) thisParser.newInstance(); //require an empty constructor
+		return (Parser) thisParser.newInstance(); //require an empty constructor, which we have!
+		
 	}
 
 	public Element getMyRoot() {
 		return myRoot;
 	}
+	
+	
 }
