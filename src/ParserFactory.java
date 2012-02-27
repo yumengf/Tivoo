@@ -19,7 +19,6 @@ public class ParserFactory {
 	private Map<String, Class<?>> myMap;
 	private Element myRoot;
 
-
 	public ParserFactory() throws ClassNotFoundException{
 		myMap = new HashMap<String, Class<?>>();
 		myMap.put("", Class.forName("DukeCalParser")); //Class.forName is a static method in Class class
@@ -36,16 +35,30 @@ public class ParserFactory {
 		SAXBuilder myBuilder = new SAXBuilder();
 		Document document = (Document) myBuilder.build(myFile);
 		myRoot = document.getRootElement();
+<<<<<<< HEAD
 
 		System.out.print(myRoot.getName());
 		Class<?> thisParser = myMap.get(myRoot.getName());
 		return (Parser) thisParser.newInstance(); //require an empty constructor, which we have!
 
+=======
+		
+		System.out.print(myRoot.getName());
+		Class<?> thisParser = myMap.get(myRoot.getName());
+		return (Parser) thisParser.newInstance(); //require an empty constructor, which we have!
+		
+>>>>>>> a22fd2fa9e6f349dfe6755a246e9eb02c3360ea2
 	}
 
 	public Element getMyRoot() {
 		return myRoot;
 	}
+<<<<<<< HEAD
 
 
 }
+=======
+	
+	
+}
+>>>>>>> a22fd2fa9e6f349dfe6755a246e9eb02c3360ea2
