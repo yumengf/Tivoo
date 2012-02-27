@@ -44,7 +44,7 @@ public class MonthOutput extends Output {
 	@Override
 	public void outputFile(String string) {
 		Html html = new Html();
-		Body body = new Body().setBgcolor("black");
+		Body body = new Body();
 		html.appendChild(body);
 		body = constructMonthFrame(body);
 		Table table = new Table().setBgcolor("grey").setBorder("2");
@@ -62,10 +62,8 @@ public class MonthOutput extends Output {
 	private Body constructMonthFrame(Body body) {
 		H1 title = new H1().setAlign("center");
 		body.appendChild(title);
-		Font font = new Font().setColor("white");
-		title.appendChild(font);
 		int i = myCalendar.get(0).getMyStartTime().getMonthOfYear();
-		title.appendText(Month[i-1]).setAlign("center");	
+		title.appendText(Month[i]).setAlign("center");	
 		return body;
 	}
 	

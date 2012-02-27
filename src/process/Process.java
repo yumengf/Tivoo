@@ -1,7 +1,11 @@
 package process;
-import input.*;
+
+
+import input.CalendarEvent;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+
 
 public class Process {
 	// creates a new filter class

@@ -16,6 +16,7 @@ import org.jdom.JDOMException;
 public class Tivoo {
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException, Exception, IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
 		try {
+			//file should be picked from GUI;
 			String file = "src/NFLcalendar.xml";
 			ParserFactory factory = new ParserFactory();
 			Parser parser = factory.getParser(file);
@@ -25,10 +26,10 @@ public class Tivoo {
 
 			Process processor = new Process();
 			ArrayList<Object> l = new ArrayList<Object>();
-			l.add(new String ("NFL"));
-			list = processor.filter("keyword", l, list);
-
-			Output output = new MonthOutput(list);
+			list = processor.filter("name reverse order", l, list);
+			
+			//Output type to be determined by GUI
+			Output output = new DayOutput(list);
 			output.outputFile("");
 
 		} catch (JDOMException e) {

@@ -1,11 +1,15 @@
 package process;
-import input.*;
+
+
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 
+
 public class KeywordFilter implements Filter{
-	private String myCommandName = "keyword"; 
-	// private String myKeyword; 
-	public KeywordFilter() {}
+	
+	private String myCommandName = "keyword filter out"; 
+	
 
     public String getCommandName() {
     	return myCommandName; 
@@ -13,12 +17,19 @@ public class KeywordFilter implements Filter{
 
     public ArrayList<CalendarEvent> filter(ArrayList<Object> parameters, ArrayList<CalendarEvent> myEvents) {
     	  ArrayList<CalendarEvent> myEventsToReturn = new ArrayList<CalendarEvent>();
-    	  String myKeyword = (String)parameters.get(0);
+    	  ArrayList<String> myKeywords = new ArrayList<String>(); 
+    	  for (Object p: parameters){
+    		  myKeywords.add((String) p);
+    	  }
+    	  
     	  // loops through events to be filter
     	  for (CalendarEvent currentEvent: myEvents){
-              // uses the hasKeyword method in the CalendarEvent class to see if the title contains the word
-              if (currentEvent.hasKeyWord(myKeyword))
-            	  myEventsToReturn.add(currentEvent); 
+              for (String k: myKeywords){
+    		  // uses the hasKeyword method in the CalendarEvent class to see if the title contains the word
+            	  if (currentEvent.hasKeyWord(k))
+            		  myEventsToReturn.add(currentEvent); 
+            	 
+              } 
           }
           return myEventsToReturn;
     }

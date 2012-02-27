@@ -1,10 +1,11 @@
 package process;
 
+import input.CalendarEvent;
 import java.util.ArrayList;
 
 import org.joda.time.DateTime;
 
-import input.CalendarEvent;
+
 
 public class ConflictFilter implements Filter {
 	private String myCommandName = "conflict"; 

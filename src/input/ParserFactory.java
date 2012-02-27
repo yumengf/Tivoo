@@ -25,6 +25,8 @@ public class ParserFactory {
 		myMap.put("document", Class.forName("input.NFLParser"));
 		myMap.put("tv", Class.forName("input.TVParser"));
 		myMap.put("events", Class.forName("input.DukeCalParser"));
+		myMap.put("feed", Class.forName("input.GoogleParser"));
+		myMap.put("dataroot", Class.forName("input.BballGameParser"));
 	}
 
 	/*

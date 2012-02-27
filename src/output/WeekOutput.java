@@ -1,11 +1,12 @@
 package output;
 
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import input.CalendarEvent;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
@@ -15,6 +16,7 @@ import com.hp.gagawa.java.elements.Html;
 import com.hp.gagawa.java.elements.Li;
 import com.hp.gagawa.java.elements.Table;
 import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
 import com.hp.gagawa.java.elements.Tr;
 import com.hp.gagawa.java.elements.Ul;
 
@@ -40,7 +42,7 @@ public class WeekOutput  extends Output{
 	@Override
 	public void outputFile(String string) {	
 		Html html = new Html();
-		Body body = new Body().setBgcolor("black");
+		Body body = new Body();
 		html.appendChild(body);
 		Table table = new Table().setBgcolor("grey").setBorder("2");
 		body.appendChild(table);
@@ -89,6 +91,7 @@ public class WeekOutput  extends Output{
 					td.appendChild(ul);
 				}
 			}
+			else td.appendChild(new Text("Empty!"));
 			tr.appendChild(td);
 		}
 		return table;
@@ -120,5 +123,3 @@ public class WeekOutput  extends Output{
 		}
 	}
 }
-
-

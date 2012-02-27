@@ -1,5 +1,7 @@
 package process;
-import input.*;
+
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 import org.joda.time.DateTime;
 

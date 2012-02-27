@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
-import com.hp.gagawa.java.elements.Font;
 import com.hp.gagawa.java.elements.H1;
 import com.hp.gagawa.java.elements.H5;
 import com.hp.gagawa.java.elements.Html;
@@ -31,10 +30,10 @@ public class DayOutput extends Output {
 	
 	public void outputFile(String string) {
 		Html html = new Html();
-		Body body = new Body().setBgcolor("black");
+		Body body = new Body();
 		html.appendChild(body);
 		body = constructDayFrame(body);
-		Table table = new Table().setBgcolor("grey").setBorder("2");
+		Table table = new Table().setBgcolor("grey").setBorder("2").setAlign("center");
 		body.appendChild(table);
 		
 		table = addEventList(table);			//Add Event list to each day
@@ -49,9 +48,8 @@ public class DayOutput extends Output {
 	private Body constructDayFrame(Body body) {
 		H1 title = new H1().setAlign("center");
 		body.appendChild(title);
-		Font font = new Font().setColor("white");
 		int i = myCalendar.get(0).startDayOfWeek();
-		title.appendText(Weekday[i]).setAlign("center").appendChild(font);;	
+		title.appendText(Weekday[i]).setAlign("center");	
 		return body;
 	}
 	/*

@@ -15,7 +15,7 @@ import org.joda.time.format.DateTimeFormatter;
  * with relevant information: start date, end date, link, location, and summary
  */
 public class DukeCalParser implements Parser{
-	private DateTimeFormatter myFormatter = DateTimeFormat.forPattern("M/d/yyyy H:mm aa");
+	private DateTimeFormatter myFormatter = DateTimeFormat.forPattern("M/d/yyyy h:mm aa");
 	
 	public DukeCalParser() {
 	}

@@ -12,11 +12,12 @@ import com.hp.gagawa.java.elements.Text;
  * Its variables are private and can be accessed through getter methods
  */
 public class CalendarEvent {
-	private String myEventName;
-	private String myLocation;
-	private String myLink;
-	private DateTime myStartDate;
-	private DateTime myEndDate;
+	//protected because TVshow is extending this class and need to use the variables
+	protected String myEventName;
+	protected String myLocation;
+	protected String myLink;
+	protected DateTime myStartDate;
+	protected DateTime myEndDate;
 
 	public CalendarEvent()
 	{
@@ -75,14 +76,22 @@ public class CalendarEvent {
 		}
 		return false;
 	}
-	public boolean hasKeyWord(String word)
-	{
-		if(myEventName.indexOf(word) != -1)
-		{
+	
+	
+	
+	public boolean hasKeyWord(String word) {
+		if(myEventName.indexOf(word) != -1){
+			return true;
+		}
+		if(myLocation.indexOf(word) != -1){
+			return true;
+		}
+		if(myLink.indexOf(word) != -1){
 			return true;
 		}
 		return false;
 	}
+	
 	public int startDayOfWeek()
 	{
 		return myStartDate.getDayOfWeek();
