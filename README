@@ -1,6 +1,33 @@
 Tivoo Part1 Code completion README
-Team members: Kaitlyn Fang, Chris Graybeal, Gideon Rosenthal, Fred Tse
+Team members: Kaitlyn Fang, Chris Graybeal, Gideon Rosenthal, Fred Xie
 
 1.Prototype main: ReadXMLFile.java
 2.Main: ParserTester.java
 3.Output file is outputEvent.htm in /Output folder
+
+-----------------------------------------------------------
+
+Tivoo Part_1 Revision README for COMPSCI_108_Spring2012_TIVOO
+
+* Team Advisor(UTA): Andrew Patterson
+
+*Team Member: 	Kaitlyn Fang, 
+		Chris Graybeal, 
+		Gideon Rosenthal, 
+		Fred Xie
+
+*StartDate: Feb.17th, 2012
+
+*EndDate/Code Submission Date: Feb.22nd, 2012
+
+*Team Workload Distribution: 
+
+	1)Parser: 
+		a) DukeCalParser: Kaitlyn Fang
+		b) NFLParser: Chris Graybeal
+	2)Process:
+		Gideon Rosenthal
+	3)Output:
+		Fred Xie
+	4)Main function(Tivoo.java):
+		Kaitlyn Fang
