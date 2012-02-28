@@ -55,7 +55,7 @@ public class SortListOutput extends Output {
 			Li li = new Li();
 			ul.appendChild(li);	
 			CalendarEvent c = myCalendar.get(i);
-			A link = new A().setHref(EventFile("Sort", i, 1, c)).setTarget("_blank");
+			A link = new A().setHref(eventFile("Sort", i, 1, c)).setTarget("_blank");
 			H5 head = new H5().appendText(c.getMyName()).setAlign("center");				
 			link.appendChild(head);
 			li.appendChild(link);
