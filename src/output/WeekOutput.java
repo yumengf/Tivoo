@@ -83,7 +83,7 @@ public class WeekOutput  extends Output{
 					CalendarEvent c = myEventMap.get(i).get(j);
 					Ul ul = new Ul();	
 					Li li = new Li();
-					A link = new A().setHref(EventFile("Week", i,j, c)).setTarget("_blank");
+					A link = new A().setHref(eventFile("Week", i,j, c)).setTarget("_blank");
 					H5 head = new H5().appendText(c.getMyName()).setAlign("center");				
 					link.appendChild(head);
 					li.appendChild(link);
