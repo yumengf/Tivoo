@@ -68,7 +68,7 @@ public class DayOutput extends Output {
 		
 		for(int i = 0; i < myCalendar.size(); i++) {
 			CalendarEvent c = myCalendar.get(i);
-			A link = new A().setHref(EventFile("Day", i, 1, c)).setTarget("_blank");
+			A link = new A().setHref(eventFile("Day", i, 1, c)).setTarget("_blank");
 			H5 head = new H5().appendText(c.getMyName()).setAlign("center");				
 			link.appendChild(head);
 			li.appendChild(link);
