@@ -1,6 +1,5 @@
-package model;
-import input.*;
-import output.*;
+package Tivoo;
+
 import process.Process;
 
 import java.io.IOException;
@@ -8,6 +7,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+
+import Input.Parser;
+import Input.ParserFactory;
+import Output.OutputFactory;
 
 /*
  * A simple main which takes in a file, specifically, src/DukeCal.xml
@@ -30,8 +33,8 @@ public class Tivoo {
 			
 			//Output type to be determined by GUI
 			//TODO: still have to handle edge case where nothing was filtered.
-			Output output = new MonthOutput(list);
-			output.outputFile("");
+			OutputFactory output = new OutputFactory(list);
+			output.output("sort","Name Reverse Order");
 			
 //			For the purpose of code testing:
 //			Output output = new DayOutput(list);
