@@ -26,7 +26,7 @@ public abstract class Output {
 	 * Construct information of CalendarEvent object  in each detail event page, 
 	 * return address of the specific page
 	 */
-	public String EventFile(String string, int i, int j, CalendarEvent cal) {
+	public String eventFile(String string, int i, int j, CalendarEvent cal) {
 		Html html = new Html();
 		Body body = new Body().setBgcolor("grey");	
 		H1 head = new H1().appendChild(new Text("Detail Information about the Event:")).setAlign("center");
