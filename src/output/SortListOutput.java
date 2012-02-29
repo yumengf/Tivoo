@@ -1,7 +1,12 @@
 package output;
 
+
+
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
@@ -11,7 +16,7 @@ import com.hp.gagawa.java.elements.Html;
 import com.hp.gagawa.java.elements.Li;
 import com.hp.gagawa.java.elements.Text;
 import com.hp.gagawa.java.elements.Ul;
-import input.CalendarEvent;
+
 
 public class SortListOutput extends Output {
 	private List<CalendarEvent> myCalendar;
@@ -23,11 +28,17 @@ public class SortListOutput extends Output {
 	@Override
 	public void outputFile(String string) {
 		Html html = new Html();
-		Body body = new Body();
-		html.appendChild(body);
 		
-		body = constructDayFrame(body, string);
-		body = addEventList(body);			//Add Event list to each day
+		if(!myCalendar.isEmpty()) {	
+			Body body = new Body();
+			html.appendChild(body);
+			
+			body = constructDayFrame(body, string);
+			body = addEventList(body);			//Add Event list to each day
+		}
+		else {
+			html.appendChild(new Text("No events on Calendar!"));
+		}
 		writeInFile(html, "Output/SortOutput.htm");
 	}
 
@@ -62,5 +73,4 @@ public class SortListOutput extends Output {
 		}
 		return body;
 	}
-	
 }

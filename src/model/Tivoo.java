@@ -1,4 +1,4 @@
-package Tivoo;
+package model;
 
 import process.Process;
 
@@ -8,9 +8,10 @@ import java.util.*;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
-import Input.Parser;
-import Input.ParserFactory;
-import Output.OutputFactory;
+import input.CalendarEvent;
+import input.Parser;
+import input.ParserFactory;
+import output.OutputFactory;
 
 /*
  * A simple main which takes in a file, specifically, src/DukeCal.xml

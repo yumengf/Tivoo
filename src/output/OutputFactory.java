@@ -1,10 +1,11 @@
 package output;
 
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import Tivoo.CalendarEvent;
 
 public class OutputFactory {
 	private ArrayList<CalendarEvent> myCalendar;

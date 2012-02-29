@@ -2,13 +2,14 @@ package output;
 
 
 
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
-import Tivoo.CalendarEvent;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
@@ -46,14 +47,18 @@ public class MonthOutput extends Output {
 	@Override
 	public void outputFile(String string) {
 		Html html = new Html();
-		if(!myCalendar.isEmpty()) {		
-		Body body = new Body();
-		html.appendChild(body);
-		body = constructMonthFrame(body);
-		Table table = new Table().setBgcolor("grey").setBorder("2");
-		body.appendChild(table);
 		
-		table = addEventList(table);			//Add Event list to each day
+		if(!myCalendar.isEmpty()) {		
+			Body body = new Body();
+			html.appendChild(body);
+			body = constructMonthFrame(body);
+			Table table = new Table().setBgcolor("grey").setBorder("2");
+			body.appendChild(table);
+			
+			table = addEventList(table);			//Add Event list to each day
+		}
+		else {
+			html.appendChild(new Text("No events on Calendar!"));
 		}
 		writeInFile(html, "Output/MonthOutput.htm");
 	}

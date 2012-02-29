@@ -1,20 +1,15 @@
 package process;
 
-
-
 import input.CalendarEvent;
 import input.TVshow; 
-
 
 import java.util.ArrayList;
 
 
 
 public class ClassSpecificFilter implements Filter{
-	
 	private String myCommandName = "ClassSpecific"; 
 	
-
     public String getCommandName() {
     	return myCommandName; 
     }

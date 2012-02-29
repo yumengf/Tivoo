@@ -1,9 +1,10 @@
 package output;
 
+import input.CalendarEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import Tivoo.CalendarEvent;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
@@ -13,6 +14,7 @@ import com.hp.gagawa.java.elements.Html;
 import com.hp.gagawa.java.elements.Li;
 import com.hp.gagawa.java.elements.Table;
 import com.hp.gagawa.java.elements.Td;
+import com.hp.gagawa.java.elements.Text;
 import com.hp.gagawa.java.elements.Tr;
 import com.hp.gagawa.java.elements.Ul;
 
@@ -31,14 +33,19 @@ public class DayOutput extends Output {
 
 	public void outputFile(String string) {
 		Html html = new Html();
-		Body body = new Body();
-		html.appendChild(body);
-		body = constructDayFrame(body);
-		Table table = new Table().setBgcolor("grey").setBorder("2")
-				.setAlign("center");
-		body.appendChild(table);
-		table = addEventList(table); // Add Event list to each day
-
+		
+		if(!myCalendar.isEmpty()) {	
+			Body body = new Body();
+			html.appendChild(body);
+			body = constructDayFrame(body);
+			Table table = new Table().setBgcolor("grey").setBorder("2")
+					.setAlign("center");
+			body.appendChild(table);
+			table = addEventList(table); // Add Event list to each day
+		}
+		else {
+			html.appendChild(new Text("No events on Calendar!"));
+		}
 		writeInFile(html, "Output/DayOutput.htm");
 	}
 

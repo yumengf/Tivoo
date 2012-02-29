@@ -1,13 +1,14 @@
 package output;
 
 
+import input.CalendarEvent;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 
 
-import Tivoo.CalendarEvent;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;

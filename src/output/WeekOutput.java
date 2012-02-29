@@ -1,11 +1,14 @@
 package output;
 
+
+
 import input.CalendarEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 
 import com.hp.gagawa.java.elements.A;
@@ -27,7 +30,7 @@ import com.hp.gagawa.java.elements.Ul;
 public class WeekOutput  extends Output{
 	private List<CalendarEvent> myCalendar;
 	private Map<Integer, ArrayList<CalendarEvent>> myEventMap;
-	private static final String[] Weekday = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+	private static final String[] Weekday = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"};
 	
 	public WeekOutput (ArrayList<CalendarEvent> cal) {
 		myCalendar = cal;
@@ -42,14 +45,19 @@ public class WeekOutput  extends Output{
 	@Override
 	public void outputFile(String string) {	
 		Html html = new Html();
-		Body body = new Body();
-		html.appendChild(body);
-		Table table = new Table().setBgcolor("grey").setBorder("2");
-		body.appendChild(table);
 		
-		table = constructWeekFrame(table);	//Initialize table within a week
-		table = addEventList(table);			//Add Event list to each day
-		
+		if(!myCalendar.isEmpty()) {	
+			Body body = new Body();
+			html.appendChild(body);
+			Table table = new Table().setBgcolor("grey").setBorder("2");
+			body.appendChild(table);
+			
+			table = constructWeekFrame(table);	//Initialize table within a week
+			table = addEventList(table);			//Add Event list to each day
+		}
+		else {
+			html.appendChild(new Text("No events on Calendar!"));
+		}
 		writeInFile(html, "Output/WeekOutput.htm");
 	}
 	
@@ -61,7 +69,7 @@ public class WeekOutput  extends Output{
 		Tr tr = new Tr().setAlign("center");
 		table.appendChild(tr);		
 		//Create table name with days in a week
-		for(int i =0; i <7; i++) {
+		for(int i = 0; i < 7; i++) {
 			Td td = new Td().setAlign("center");
 			td.appendChild(new H2().appendText(Weekday[i]).setAlign("center"));
 			tr.appendChild(td);
@@ -76,7 +84,7 @@ public class WeekOutput  extends Output{
 		Tr tr = new Tr().setAlign("center");
 		table.appendChild(tr);
 		
-		for(int i =0; i <7; i++) {
+		for(int i = 1; i <= 7; i++) {
 			Td td = new Td().setAlign("center");
 			if(myEventMap.containsKey(i)&&!myEventMap.get(i).isEmpty()) {
 				for(int j = 0; j< myEventMap.get(i).size(); j++) {
@@ -103,7 +111,7 @@ public class WeekOutput  extends Output{
 	 */
 	private void constructMap() {
 		for(CalendarEvent cal : myCalendar) {			//Sort date into each day
-			for(int j = 0; j <7; j++) {
+			for(int j = 1; j <= 7; j++) {
 				if((cal.startDayOfWeek() == j)&&!myEventMap.get(j).contains(cal)){
 					ArrayList<CalendarEvent> currentList = myEventMap.get(j);
 					currentList.add(cal);
@@ -118,8 +126,10 @@ public class WeekOutput  extends Output{
 	 * Used in Constructor
 	 */
 	private void initialMap() {
-		for(int i = 0; i <7; i++) {
+		for(int i = 1; i <= 7; i++) {
 			myEventMap.put(i, new ArrayList<CalendarEvent>());
 		}
 	}
 }
+
+
