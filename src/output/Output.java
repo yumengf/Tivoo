@@ -1,11 +1,13 @@
 package output;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 
-import input.CalendarEvent;
+
+import Tivoo.CalendarEvent;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
@@ -19,7 +21,6 @@ import com.hp.gagawa.java.elements.Text;
  */
 
 public abstract class Output {
-	
 	public abstract void outputFile(String string);
 	
 	/*
@@ -57,5 +58,4 @@ public abstract class Output {
                 e.printStackTrace();
         }
 	}
-	
 }
