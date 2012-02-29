@@ -1,10 +1,14 @@
 package output;
 
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+import Tivoo.CalendarEvent;
 
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
@@ -19,8 +23,6 @@ import com.hp.gagawa.java.elements.Td;
 import com.hp.gagawa.java.elements.Text;
 import com.hp.gagawa.java.elements.Tr;
 import com.hp.gagawa.java.elements.Ul;
-
-import input.CalendarEvent;
 
 /*
  *MonthOutput class receive list of CalendarEvent objects with information of eventName, date, location, 
@@ -44,6 +46,7 @@ public class MonthOutput extends Output {
 	@Override
 	public void outputFile(String string) {
 		Html html = new Html();
+		if(!myCalendar.isEmpty()) {		
 		Body body = new Body();
 		html.appendChild(body);
 		body = constructMonthFrame(body);
@@ -51,7 +54,7 @@ public class MonthOutput extends Output {
 		body.appendChild(table);
 		
 		table = addEventList(table);			//Add Event list to each day
-		
+		}
 		writeInFile(html, "Output/MonthOutput.htm");
 	}
 
@@ -63,7 +66,7 @@ public class MonthOutput extends Output {
 		H1 title = new H1().setAlign("center");
 		body.appendChild(title);
 		int i = myCalendar.get(0).getMyStartTime().getMonthOfYear();
-		title.appendText(Month[i]).setAlign("center");	
+		title.appendText(Month[i-1]).setAlign("center");	
 		return body;
 	}
 	
@@ -126,5 +129,4 @@ public class MonthOutput extends Output {
 			myEventMap.put(i, new ArrayList<CalendarEvent>());
 		}
 	}
-	
 }
