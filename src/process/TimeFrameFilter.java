@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.joda.time.DateTime;
 
 public class TimeFrameFilter implements Filter{
-	private String myCommandName = "TimeFrame"; 
+	private String myCommandName = "timeFrame"; 
 
     public String getCommandName() {  
 	    return myCommandName; 

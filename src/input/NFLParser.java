@@ -37,10 +37,10 @@ public class NFLParser implements Parser {
 		for (Object e : list) {
 			Element event = (Element) e;
 			String date = event.getChildText("Col8");
-			DateTime startDateTime = myFormatter.parseDateTime(date);
+			DateTime endDateTime = myFormatter.parseDateTime(date);
 
 			String enddate = event.getChildText("Col9");
-			DateTime endDateTime = myFormatter.parseDateTime(enddate);
+			DateTime startDateTime = myFormatter.parseDateTime(enddate);
 
 			String link = event.getChildText("Col2");
 			String location = event.getChildText("Col15");

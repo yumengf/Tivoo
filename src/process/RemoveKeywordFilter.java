@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class RemoveKeywordFilter implements Filter{
 	
-	private String myCommandName = "keyword keep"; 
+	private String myCommandName = "removeKeyword"; 
 	
 
     public String getCommandName() {

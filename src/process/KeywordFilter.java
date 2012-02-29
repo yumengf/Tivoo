@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class KeywordFilter implements Filter{
 	
-	private String myCommandName = "keyword filter out"; 
+	private String myCommandName = "keyword"; 
 	
 
     public String getCommandName() {

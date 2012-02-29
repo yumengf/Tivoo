@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 public class ClassSpecificFilter implements Filter{
-	private String myCommandName = "ClassSpecific"; 
+	private String myCommandName = "classSpecific"; 
 	
     public String getCommandName() {
     	return myCommandName; 

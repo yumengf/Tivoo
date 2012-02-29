@@ -28,14 +28,14 @@ public class Tivoo {
 
 			ArrayList<CalendarEvent> list = parser.parse(rootNode);
 
-			Process processor = new Process();
+			/*Process processor = new Process();
 			ArrayList<Object> l = new ArrayList<Object>();
-			list = processor.filter("name reverse order", l, list);
+			list = processor.filter("conflict", l, list);*/
 			
 			//Output type to be determined by GUI
 			//TODO: still have to handle edge case where nothing was filtered.
 			OutputFactory output = new OutputFactory(list);
-			output.output("sort","Name Reverse Order");
+			output.output("sort","conflict Events");
 			
 //			For the purpose of code testing:
 //			Output output = new DayOutput(list);
