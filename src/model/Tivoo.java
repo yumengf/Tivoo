@@ -28,9 +28,9 @@ public class Tivoo {
 
 			ArrayList<CalendarEvent> list = parser.parse(rootNode);
 
-			/*Process processor = new Process();
+			Process processor = new Process();
 			ArrayList<Object> l = new ArrayList<Object>();
-			list = processor.filter("conflict", l, list);*/
+			list = processor.filter("conflict", l, list);
 			
 			//Output type to be determined by GUI
 			//TODO: still have to handle edge case where nothing was filtered.
