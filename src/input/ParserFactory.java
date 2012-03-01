@@ -43,6 +43,20 @@ public class ParserFactory {
 		Class<?> thisParser = myMap.get(myRoot.getName());
 		return (Parser) thisParser.newInstance(); // require an empty
 													// constructor
+
+	}
+	
+	public Parser getParser(File file) throws JDOMException, IOException,
+			InstantiationException, IllegalAccessException {
+
+		SAXBuilder myBuilder = new SAXBuilder();
+		Document document = (Document) myBuilder.build(file);
+		myRoot = document.getRootElement();
+
+		Class<?> thisParser = myMap.get(myRoot.getName());
+		return (Parser) thisParser.newInstance(); // require an empty
+													// constructor
+
 	}
 
 	public Element getMyRoot() {

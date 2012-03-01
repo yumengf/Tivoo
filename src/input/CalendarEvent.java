@@ -95,10 +95,10 @@ public class CalendarEvent {
 		div.appendChild(new Text("Event Name: " + myEventName + "<br />"));
 		div.appendChild(new Text("Event Location: " + myLocation + "<br />"));
 		div.appendChild(new Text("Event Start Time: "
-				+ myStartDate.toString("EEEE dd MMMM, yyyy HH:mm:ssa")
+				+ myStartDate.toString("dd MMMM, yyyy HH:mm:ss")
 				+ "<br />"));
 		div.appendChild(new Text("Event End Time: "
-				+ myEndDate.toString("EEEE dd MMMM, yyyy HH:mm:ssa") + "<br />"));
+				+ myEndDate.toString("dd MMMM, yyyy HH:mm:ss") + "<br />"));
 	}
 
 	public String toString() {
