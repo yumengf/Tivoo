@@ -8,42 +8,40 @@ import java.util.Comparator;
 
 import org.joda.time.DateTime;
 
+/*
+ *  Filter Events in the order of event start time
+ */
+public class StartTimeFilter implements Filter {
 
-public  class StartTimeFilter implements Filter{
-	
-	 
-	private String myCommandName = "start in order"; 
+	private String myCommandName = "start in order";
 
 	@Override
-    public String getCommandName() {
-	    // TODO Auto-generated method stub
-	    return myCommandName;
-    }
-	
+	public String getCommandName() {
+		// TODO Auto-generated method stub
+		return myCommandName;
+	}
+
 	public ArrayList<CalendarEvent> filter(ArrayList<Object> parameters,
-            ArrayList<CalendarEvent> events) {
-	    InOrderFilter myFilter = new InOrderFilter(); 
-	    ArrayList<CalendarEvent> eventsToReturn = events; 
-	    Collections.sort(eventsToReturn, myFilter);
-	    
-	    return eventsToReturn; 
-    }
+			ArrayList<CalendarEvent> events) {
+		InOrderFilter myFilter = new InOrderFilter();
+		ArrayList<CalendarEvent> eventsToReturn = events;
+		Collections.sort(eventsToReturn, myFilter);
 
-	
-    private class InOrderFilter implements Comparator<CalendarEvent>{
+		return eventsToReturn;
+	}
 
-        public int compare(CalendarEvent o1, CalendarEvent o2) {
-			
-			DateTime start1 = o1.getMyStartTime(); 
-			DateTime start2 = o2.getMyStartTime(); 
-			
-			int test = start1.compareTo(start2); 
-			return test; 
-			
-        }
-    	
-    }
- 
+	private class InOrderFilter implements Comparator<CalendarEvent> {
+
+		public int compare(CalendarEvent o1, CalendarEvent o2) {
+
+			DateTime start1 = o1.getMyStartTime();
+			DateTime start2 = o2.getMyStartTime();
+
+			int test = start1.compareTo(start2);
+			return test;
+
+		}
+
+	}
+
 }
-
-

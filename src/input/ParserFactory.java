@@ -43,7 +43,6 @@ public class ParserFactory {
 		Class<?> thisParser = myMap.get(myRoot.getName());
 		return (Parser) thisParser.newInstance(); // require an empty
 													// constructor
-
 	}
 
 	public Element getMyRoot() {

@@ -5,7 +5,6 @@ import input.CalendarEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.hp.gagawa.java.elements.A;
 import com.hp.gagawa.java.elements.Body;
 import com.hp.gagawa.java.elements.H1;
@@ -20,12 +19,13 @@ import com.hp.gagawa.java.elements.Ul;
 
 /*
  *DayOutput class receive list of CalendarEvent objects with information of eventName, date, location, 
- *startTime and endTime, and then output the information into a html file with specific information linked to each event.
+ *startTime and endTime, 
+ *Events time within a day. output into html file
  */
 public class DayOutput extends Output {
 	private List<CalendarEvent> myCalendar;
-	private static final String[] Weekday = {"Monday", "Tuesday",
-			"Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+	private static final String[] Weekday = { "Monday", "Tuesday", "Wednesday",
+			"Thursday", "Friday", "Saturday", "Sunday" };
 
 	public DayOutput(ArrayList<CalendarEvent> cal) {
 		myCalendar = cal;
@@ -33,8 +33,8 @@ public class DayOutput extends Output {
 
 	public void outputFile(String string) {
 		Html html = new Html();
-		
-		if(!myCalendar.isEmpty()) {	
+
+		if (!myCalendar.isEmpty()) {
 			Body body = new Body();
 			html.appendChild(body);
 			body = constructDayFrame(body);
@@ -42,8 +42,7 @@ public class DayOutput extends Output {
 					.setAlign("center");
 			body.appendChild(table);
 			table = addEventList(table); // Add Event list to each day
-		}
-		else {
+		} else {
 			html.appendChild(new Text("No events on Calendar!"));
 		}
 		writeInFile(html, "Output/DayOutput.htm");
@@ -57,7 +56,7 @@ public class DayOutput extends Output {
 		H1 title = new H1().setAlign("center");
 		body.appendChild(title);
 		int i = myCalendar.get(0).startDayOfWeek();
-		title.appendText(Weekday[i-1]).setAlign("center");
+		title.appendText(Weekday[i - 1]).setAlign("center");
 		return body;
 	}
 
