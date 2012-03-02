@@ -7,9 +7,9 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 
 /*
- * Parser is an abstract super class for all subclass Parsers for individual .xml files
+ * Parser is an interface for all subclass Parsers for individual .xml files
  */
-public abstract interface Parser {
+public interface Parser {
 	public abstract ArrayList<CalendarEvent> parse(Element rootNode)
 			throws JDOMException, IOException;
 }
