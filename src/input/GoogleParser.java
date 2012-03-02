@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jdom.Namespace;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -17,10 +18,15 @@ import org.joda.time.format.DateTimeFormatter;
  */
 public class GoogleParser implements Parser {
 	private DateTimeFormatter myFormatter1 = DateTimeFormat
-			.forPattern("yyyy-MM-dd HH:mm:ss zzz");
+			.forPattern("yyyy-MM-dd HH:mm:ss");
 	private DateTimeFormatter myFormatter2 = DateTimeFormat
 			.forPattern("EEE MMM d, yyyy h:mmaa");
+	private DateTimeFormatter myFormatter5 = DateTimeFormat
+			.forPattern("EEE MMM d, yyyy haa");
+	private DateTimeFormatter myFormatter6 = DateTimeFormat
+			.forPattern("EEE MMM d, yyyy");
 	private DateTimeFormatter myFormatter3 = DateTimeFormat.forPattern("h:maa");
+	private DateTimeFormatter myFormatter4 = DateTimeFormat.forPattern("haa");
 
 	public GoogleParser() {
 	}
@@ -35,65 +41,118 @@ public class GoogleParser implements Parser {
 	public ArrayList<CalendarEvent> parse(Element rootNode)
 			throws JDOMException, IOException {
 		ArrayList<CalendarEvent> collection = new ArrayList<CalendarEvent>();
-		List<?> list = rootNode.getChildren("entry");
-
+		String url = "http://www.w3.org/2005/Atom";
+		Namespace ns = Namespace.getNamespace(url);
+		List<?> list = rootNode.getChildren("entry", ns);
+		// List<Element> newlist = new ArrayList<Element>();
+		// for (Object e : list)
+		// {
+		// Element ee = (Element)e;
+		// if(ee.getName().equals("entry")){
+		// //System.out.println("yayyy");
+		// newlist.add(ee);
+		// }
+		// }
+		// //System.out.println(rootNode.getChildren("id"));
+		// list = newlist;
 		for (Object e : list) {
 			Element event = (Element) e;
 
-			String information = event.getChildText("summary");
-			int start = information.indexOf("start: ") + 7;
+			String information = event.getChildText("summary", ns);
+			// System.out.println(event.getChildren());
+			int start = 0;
 
-			int endOfStart = information.indexOf(" <br>");
-			int end = information.indexOf("Duration: ") + 10;
-			int endDuration = Integer.parseInt(information.substring(end,
-					end + 4));
+			int endOfStart = 0;
+			int end = 0;
+			int endDuration = 0;
+			int endOfEnd = 0;
+			DateTime startDateTime = new DateTime();
+			DateTime endDateTime = new DateTime();
+			boolean noEnd = false;
 
-			DateTime startDateTime, endDateTime;
+			if (information.indexOf("start: ") == -1) {
+				try {
+					// System.out.println(information);
+					start = information.indexOf("When: ") + 6;
+					endOfStart = information.indexOf(" to ");
+//					System.out.println(information + "," + endOfStart);
+					end = endOfStart + 4;
+					endOfEnd = information.indexOf("&nbsp;");
 
-			if (start == -1) {
-				start = information.indexOf("When: ") + 6;
-				endOfStart = information.indexOf(" to ");
-				end = endOfStart + 4;
-				int endOfEnd = information.indexOf("&nbsp;");
+					startDateTime = myFormatter2.parseDateTime(information
+							.substring(start, endOfStart));
+				} catch (IllegalArgumentException err) {
+					startDateTime = myFormatter5.parseDateTime(information
+							.substring(start, endOfStart));
+				} catch (StringIndexOutOfBoundsException eeee) {
+					endOfStart = information.indexOf("<br>");
+//					System.out.println(information + "," + endOfStart);
 
-				startDateTime = myFormatter2.parseDateTime(information
-						.substring(start, endOfStart));
-
-				DateTime endTime = myFormatter3.parseDateTime(information
-						.substring(end, endOfEnd));
-				endDateTime = new DateTime(startDateTime.getYear(),
-						startDateTime.getMonthOfYear(),
-						startDateTime.getDayOfMonth(), endTime.getHourOfDay(),
-						endTime.getMinuteOfHour());
-
+					startDateTime = myFormatter6.parseDateTime(information
+							.substring(start, endOfStart));
+					noEnd = true;
+				}
+				if (!noEnd) {
+					try {
+						DateTime endTime = myFormatter3
+								.parseDateTime(information.substring(end,
+										endOfEnd));
+						endDateTime = new DateTime(startDateTime.getYear(),
+								startDateTime.getMonthOfYear(),
+								startDateTime.getDayOfMonth(),
+								endTime.getHourOfDay(),
+								endTime.getMinuteOfHour());
+					} catch (IllegalArgumentException err) {
+						DateTime endTime = myFormatter4
+								.parseDateTime(information.substring(end,
+										endOfEnd));
+						endDateTime = new DateTime(startDateTime.getYear(),
+								startDateTime.getMonthOfYear(),
+								startDateTime.getDayOfMonth(),
+								endTime.getHourOfDay(),
+								endTime.getMinuteOfHour());
+					}
+				}
 			} else {
 
+				start = information.indexOf("start: ") + 7;
+
+				endOfStart = information.indexOf(" EDT");
+				end = information.indexOf("Duration: ") + 10;
+				// System.out.println(end);
+				endDuration = Integer.parseInt(information.substring(end,
+						end + 4));
+				// System.out.println(information + "" + endOfStart);
+				if (endOfStart == -1)
+					endOfStart = information.indexOf("\n<br>");
 				startDateTime = myFormatter1.parseDateTime(information
 						.substring(start, endOfStart));
 				endDateTime = startDateTime.plusSeconds(endDuration);
 
 			}
 
-			// Get location
 			String location = "No Location Provided!";
 			if (information.indexOf("Where") != -1) {
 				int s = information.indexOf("Where") + 7;
-				int eee = information.indexOf(" <br>", s); // sorry about the
-															// name, I am
-															// frustrated..
-				location = information.substring(s, eee);
+				int eee = information.indexOf("\n<br>", s);
+
+				if (s == -6)
+					location = "";
+				else
+					location = information.substring(s, eee);
 			}
 
-			String name = event.getChildText("title");
+			String name = event.getChildText("title", ns);
 
 			String link = "No Link Provided!";
-			if (event.getChild("link").getAttributeValue("rel")
+			if (event.getChild("link", ns).getAttributeValue("rel")
 					.equals("alternate")) {
-				link = event.getChild("link").getAttributeValue("href");
+				link = event.getChild("link", ns).getAttributeValue("href");
 			}
 
 			CalendarEvent ce = new CalendarEvent(name, location, endDateTime,
 					startDateTime, link);
+
 			collection.add(ce);
 		}
 		return collection;

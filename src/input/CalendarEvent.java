@@ -18,6 +18,7 @@ public class CalendarEvent {
 	protected String myLink;
 	protected DateTime myStartDate;
 	protected DateTime myEndDate;
+	protected boolean isRecurring;
 
 	public CalendarEvent() {
 		myEventName = null;
@@ -25,15 +26,22 @@ public class CalendarEvent {
 		myStartDate = null;
 		myEndDate = null;
 		myLink = null;
+		isRecurring = false;
+	}
+	
+	public CalendarEvent(String name, String location, DateTime start,
+			DateTime end, String link) {
+		this(name, location, start, end, link, false);
 	}
 
 	public CalendarEvent(String name, String location, DateTime start,
-			DateTime end, String link) {
+			DateTime end, String link, boolean rec) {
 		myEventName = name;
 		myLocation = location;
 		myStartDate = start;
 		myEndDate = end;
 		myLink = link;
+		isRecurring = rec;
 	}
 
 	public String getMyName() {

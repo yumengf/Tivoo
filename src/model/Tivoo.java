@@ -25,20 +25,20 @@ public class Tivoo {
 			InvocationTargetException {
 		try {
 			// file should be picked from GUI;
-			String file = "src/NFLcalendar.xml";
+			String file = "src/googlecal.xml";
 			ParserFactory factory = new ParserFactory();
 			Parser parser = factory.getParser(file);
 			Element rootNode = factory.getMyRoot();
 
 			ArrayList<CalendarEvent> list = parser.parse(rootNode);
-
+//			System.out.println(list.size());
 			/*
 			 * Test Case One:
 			 */
 			Process processor = new Process();
 			ArrayList<Object> l = new ArrayList<Object>();
-			l.add(new DateTime(2011, 12, 1, 0, 0));
-			l.add(new DateTime(2011, 12, 31, 0, 0));
+			l.add(new DateTime(2011, 9, 1, 0, 0));
+			l.add(new DateTime(2011, 9, 30, 0, 0));
 			list = processor.filter("timeFrame", l, list);
 
 			OutputFactory output = new OutputFactory(list);
