@@ -31,7 +31,6 @@ public class Tivoo {
 			Element rootNode = factory.getMyRoot();
 
 			ArrayList<CalendarEvent> list = parser.parse(rootNode);
-//			System.out.println(list.size());
 			/*
 			 * Test Case One:
 			 */

@@ -44,22 +44,10 @@ public class GoogleParser implements Parser {
 		String url = "http://www.w3.org/2005/Atom";
 		Namespace ns = Namespace.getNamespace(url);
 		List<?> list = rootNode.getChildren("entry", ns);
-		// List<Element> newlist = new ArrayList<Element>();
-		// for (Object e : list)
-		// {
-		// Element ee = (Element)e;
-		// if(ee.getName().equals("entry")){
-		// //System.out.println("yayyy");
-		// newlist.add(ee);
-		// }
-		// }
-		// //System.out.println(rootNode.getChildren("id"));
-		// list = newlist;
 		for (Object e : list) {
 			Element event = (Element) e;
 
 			String information = event.getChildText("summary", ns);
-			// System.out.println(event.getChildren());
 			int start = 0;
 
 			int endOfStart = 0;
@@ -72,10 +60,8 @@ public class GoogleParser implements Parser {
 
 			if (information.indexOf("start: ") == -1) {
 				try {
-					// System.out.println(information);
 					start = information.indexOf("When: ") + 6;
 					endOfStart = information.indexOf(" to ");
-//					System.out.println(information + "," + endOfStart);
 					end = endOfStart + 4;
 					endOfEnd = information.indexOf("&nbsp;");
 
@@ -86,7 +72,6 @@ public class GoogleParser implements Parser {
 							.substring(start, endOfStart));
 				} catch (StringIndexOutOfBoundsException eeee) {
 					endOfStart = information.indexOf("<br>");
-//					System.out.println(information + "," + endOfStart);
 
 					startDateTime = myFormatter6.parseDateTime(information
 							.substring(start, endOfStart));
@@ -119,10 +104,8 @@ public class GoogleParser implements Parser {
 
 				endOfStart = information.indexOf(" EDT");
 				end = information.indexOf("Duration: ") + 10;
-				// System.out.println(end);
 				endDuration = Integer.parseInt(information.substring(end,
 						end + 4));
-				// System.out.println(information + "" + endOfStart);
 				if (endOfStart == -1)
 					endOfStart = information.indexOf("\n<br>");
 				startDateTime = myFormatter1.parseDateTime(information
