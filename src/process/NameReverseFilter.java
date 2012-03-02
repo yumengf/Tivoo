@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class NameReverseFilter implements Filter {
 
-	private String myCommandName = "name reverse order";
+	private String myCommandName = "nameReverseOrder";
 
 	@Override
 	public String getCommandName() {

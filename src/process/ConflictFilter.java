@@ -11,17 +11,12 @@ import org.joda.time.DateTime;
 public class ConflictFilter implements Filter {
 	private String myCommandName = "conflict";
 
-	// private String myKeyword;
-
-	public ConflictFilter() {
-	};
-
-	@Override
 	public String getCommandName() {
 		return myCommandName;
 	}
 
-	@Override
+	// private String myKeyword;
+
 	public ArrayList<CalendarEvent> filter(ArrayList<Object> parameters,
 			ArrayList<CalendarEvent> myEvents) {
 		ArrayList<CalendarEvent> myEventsCopy = new ArrayList<CalendarEvent>();

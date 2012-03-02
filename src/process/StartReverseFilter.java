@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class StartReverseFilter implements Filter {
 
-	private String myCommandName = "start reverse order";
+	private String myCommandName = "startReverseOrder";
 
 	public String getCommandName() {
 

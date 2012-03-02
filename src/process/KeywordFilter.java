@@ -5,34 +5,46 @@ import input.CalendarEvent;
 import java.util.ArrayList;
 
 /*
- *  Filter Events by only keep events with selected keyword
+ * When given an arraylist of keywords, this class returns an arraylist 
+ * of events that only contain these key words
  */
 public class KeywordFilter implements Filter {
 
-	private String myCommandName = "keyword";
+	private String myCommandName = "keepKeyword";
 
 	public String getCommandName() {
 		return myCommandName;
 	}
 
+	// override method from Filter
 	public ArrayList<CalendarEvent> filter(ArrayList<Object> parameters,
-			ArrayList<CalendarEvent> myEvents) {
-		ArrayList<CalendarEvent> myEventsToReturn = new ArrayList<CalendarEvent>();
+			ArrayList<CalendarEvent> myEvents) throws ClassCastException {
+
+		ArrayList<CalendarEvent> myEventsWith = new ArrayList<CalendarEvent>();
 		ArrayList<String> myKeywords = new ArrayList<String>();
+
+		// checks to make sure these parameters are in fact Strings
 		for (Object p : parameters) {
-			myKeywords.add((String) p);
+			if (p instanceof String) {
+				// find the start date and the end date of the time frame
+				myKeywords.add((String) p);
+			} else {
+				System.out.println("Instance " + p.toString()
+						+ " was not a String Type!");
+			}
 		}
 
-		// loops through events to be filter
+		// loops through events to be filtered
 		for (CalendarEvent currentEvent : myEvents) {
+			// loops through the keywords
 			for (String k : myKeywords) {
 				// uses the hasKeyword method in the CalendarEvent class to see
-				// if the title contains the word
+				// if the title contains the current keyword
 				if (currentEvent.hasKeyWord(k))
-					myEventsToReturn.add(currentEvent);
+					myEventsWith.add(currentEvent);
 
 			}
 		}
-		return myEventsToReturn;
+		return myEventsWith;
 	}
 }

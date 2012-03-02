@@ -2,7 +2,6 @@ package process;
 
 import input.CalendarEvent;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class Process {
@@ -19,10 +18,7 @@ public class Process {
 
 	public ArrayList<CalendarEvent> filter(String myCommand,
 			ArrayList<Object> myParameters,
-			ArrayList<CalendarEvent> eventsToFilter) throws SecurityException,
-			IllegalArgumentException, InstantiationException,
-			IllegalAccessException, NoSuchMethodException,
-			InvocationTargetException {
+			ArrayList<CalendarEvent> eventsToFilter) throws Exception {
 		// uses the filter factory to get the correct event filter using the
 		// command line
 		Filter myFilter = myFilterFactory.getFilter(myCommand);

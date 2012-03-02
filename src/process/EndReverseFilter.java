@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class EndReverseFilter implements Filter {
 
-	private String myCommandName = "end reverse order";
+	private String myCommandName = "endReverseOrder";
 
 	public String getCommandName() {
 

@@ -28,7 +28,7 @@ public class CalendarEvent {
 		myLink = null;
 		isRecurring = false;
 	}
-	
+
 	public CalendarEvent(String name, String location, DateTime start,
 			DateTime end, String link) {
 		this(name, location, start, end, link, false);
@@ -103,8 +103,7 @@ public class CalendarEvent {
 		div.appendChild(new Text("Event Name: " + myEventName + "<br />"));
 		div.appendChild(new Text("Event Location: " + myLocation + "<br />"));
 		div.appendChild(new Text("Event Start Time: "
-				+ myStartDate.toString("dd MMMM, yyyy HH:mm:ss")
-				+ "<br />"));
+				+ myStartDate.toString("dd MMMM, yyyy HH:mm:ss") + "<br />"));
 		div.appendChild(new Text("Event End Time: "
 				+ myEndDate.toString("dd MMMM, yyyy HH:mm:ss") + "<br />"));
 	}

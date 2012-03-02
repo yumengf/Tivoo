@@ -10,6 +10,6 @@ import org.jdom.JDOMException;
  * Parser is an interface for all subclass Parsers for individual .xml files
  */
 public interface Parser {
-	public ArrayList<CalendarEvent> parse(Element rootNode)
+	public abstract ArrayList<CalendarEvent> parse(Element rootNode)
 			throws JDOMException, IOException;
 }
