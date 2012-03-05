@@ -3,6 +3,7 @@ package process;
 import input.CalendarEvent;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Process {
 	// creates a new filter class
@@ -25,5 +26,11 @@ public class Process {
 		// calls the filter method in the specified class and returns an
 		// arraylist of the events after being filtered
 		return myFilter.filter(myParameters, eventsToFilter);
+	}
+
+	public List<CalendarEvent> filter(String filters, List<?> l,
+			List<CalendarEvent> list) throws Exception {
+		// TODO Auto-generated method stub
+		return filter(filters, (ArrayList<Object>)l, (ArrayList<CalendarEvent>)list);
 	}
 }
